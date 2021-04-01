@@ -7,19 +7,27 @@
         <link rel="stylesheet" href="css/network.css" type="text/css" media="screen">
     </head>
     <body>
-        <div id="content">
-            <div id="picture"><img src="img/zulip_network.png"></div>
-            <div id="title">We can't connect to this organization</div>
-            <div id="subtitle">This could be because</div>
-            <ul id="description">
-                <li>You're not online or your proxy is misconfigured.</li>
-                <li>There is no Zulip organization hosted at this URL.</li>
-                <li>This Zulip organization is temporarily unavailable.</li>
-                <li>This Zulip organization has been moved or deleted.</li>
-            </ul>
-            <div id="buttons">
-                <div id="reconnect" class="button">Reconnect</div>
-                <div id="settings" class="button">Settings</div>
+        <div class="container">
+            <div class="maingraphic">
+                <img src="img/zulip_network.png">
+            </div>
+            <div id="content">
+                <div id="title">We can't connect to this organization</div>
+                <div id="subtitle">
+                    <ul>
+                        <li>This could be because</li>
+                    </ul>
+                </div>
+                <ul id="description">
+                    <li>You're not online or your proxy is misconfigured.</li>
+                    <li>There is no Zulip organization hosted at this URL.</li>
+                    <li>This Zulip organization is temporarily unavailable.</li>
+                    <li>This Zulip organization has been moved or deleted.</li>
+                </ul>
+                <div id="buttons">
+                    <button id="reconnect" class="button">Reconnect</button>
+                    <button id="settings" class="button">Settings</button>
+                </div>
             </div>
         </div>
     </body>
