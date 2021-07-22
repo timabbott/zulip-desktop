@@ -377,18 +377,20 @@ webview.focus {
 
 #add-server-tooltip,
 .server-tooltip {
-  font-family: "arial", sans-serif;
-  background: rgba(34, 44, 49, 1);
-  left: 56px;
-  padding: 10px 20px;
-  position: fixed;
-  margin-top: 11px;
-  z-index: 5000 !important;
-  color: rgba(255, 255, 255, 1);
-  border-radius: 4px;
-  text-align: center;
-  width: max-content;
-  font-size: 14px;
+
+    font-family: 'arial';
+    background: rgba(34, 44, 49, 1.000);
+    left: 60px;
+    padding: 10px 20px;
+    position: fixed;
+    margin-top: 11px;
+    z-index: 5000 !important;
+    color: rgba(255, 255, 255, 1.000);
+    border-radius: 4px;
+    text-align: center;
+    width: max-content;
+    font-size: 14px;
+
 }
 
 #add-server-tooltip::after,
