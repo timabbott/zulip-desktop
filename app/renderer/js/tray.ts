@@ -3,6 +3,7 @@ import {remote} from "electron";
 import path from "path";
 
 import * as ConfigUtil from "../../common/config-util";
+import * as t from "../../common/translation-util";
 import type {RendererMessage} from "../../common/typed-ipc";
 
 import {ipcRenderer} from "./typed-ipc-renderer";
@@ -191,12 +192,14 @@ ipcRenderer.on("tray", (_event: Event, arg: number): void => {
     if (arg === 0) {
       unread = arg;
       tray.setImage(iconPath());
-      tray.setToolTip("No unread messages");
+      tray.setToolTip(t.__("No unread messages"));
     } else {
       unread = arg;
       const image = renderNativeImage(arg);
       tray.setImage(image);
-      tray.setToolTip(`${arg} unread messages`);
+      tray.setToolTip(
+        t.__(`{{count}} unread messages`, {count: arg.toString()}),
+      );
     }
   }
 });

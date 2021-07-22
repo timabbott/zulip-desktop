@@ -13,6 +13,9 @@ i18n.configure({
 const appLocale = ConfigUtil.getConfigItem("appLanguage", "en");
 
 /* If no locale present in the json, en is set default */
-export function __(phrase: string): string {
-  return i18n.__({phrase, locale: appLocale ? appLocale : "en"});
+export function __(
+  phrase: string,
+  replacements: i18n.Replacements = {},
+): string {
+  return i18n.__({phrase, locale: appLocale ? appLocale : "en"}, replacements);
 }
