@@ -767,3 +767,7 @@ i.open-network-button {
   top: 0;
   bottom: 0;
 }
+
+option {
+    font-size: 20px;
+}
