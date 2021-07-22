@@ -1,0 +1,49 @@
+name: Node.js CI
+
+on: push
+
+jobs:
+  build:
+    name: ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          - windows-latest
+          - macos-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm ci
+      - run: npm test
+
+  windows-artifact:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm ci
+      - uses: samuelmeuli/action-electron-builder@v1
+        with:
+          args: --x64 --win nsis-web
+          github_token: ${{ secrets.github_token }}
+          windows_certs: ${{ secrets.windows_certs }}
+          windows_certs_password: ${{ secrets.windows_certs_password }}
+      - uses: actions/upload-artifact@v2
+        with:
+          name: windows-dist
+          path: ./dist
+
+  linux-artifact:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm ci
+      - uses: samuelmeuli/action-electron-builder@v1
+        with:
+          args: --linux AppImage
+          github_token: ${{ secrets.github_token }}
+      - uses: actions/upload-artifact@v2
+        with:
+          name: linux-dist
+          path: ./dist

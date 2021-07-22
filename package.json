@@ -34,7 +34,9 @@
     "test-e2e": "tsc && tape 'tests/*.js'",
     "pack": "tsc && electron-builder --dir",
     "dist": "tsc && electron-builder",
-    "mas": "tsc && electron-builder --mac mas"
+    "mas": "tsc && electron-builder --mac mas",
+    "build": "tsc",
+    "publish": "never"
   },
   "pre-commit": [
     "test"
