@@ -767,3 +767,6 @@ i.open-network-button {
   top: 0;
   bottom: 0;
 }
+.tagify {
+    width: 400px;
+}
