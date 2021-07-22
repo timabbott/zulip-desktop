@@ -968,6 +968,23 @@ class ServerManagerView {
     });
 
     ipcRenderer.on("open-settings", async () => {
+      let numberServers = 0;
+      for (const tab of this.tabs) {
+        if (tab.props.role === "server") {
+          numberServers++;
+        }
+      }
+
+      if (numberServers === 1) {
+        const value = ConfigUtil.getConfigItem("showSidebar");
+        if (!value) {
+          const newValue = !value;
+          this.toggleSidebar(newValue);
+          this.updateGeneralSettings("toggle-sidebar-setting", newValue);
+          ConfigUtil.setConfigItem("showSidebar", newValue);
+        }
+      }
+
       await this.openSettings();
     });
 
