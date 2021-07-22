@@ -299,7 +299,7 @@ body {
   position: absolute;
   z-index: 1;
   background: rgba(255, 255, 255, 1) url(../img/ic_loading.gif) no-repeat;
-  background-size: 60px 60px;
+  background-size: 80px 80px;
   background-position: center;
   width: 100%;
   height: 100%;
