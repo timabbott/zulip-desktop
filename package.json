@@ -81,7 +81,7 @@
       "description": "Zulip Desktop Client for Linux",
       "target": [
         "deb",
-        "zip",
+        "tar.xz",
         "AppImage",
         "snap"
       ],
