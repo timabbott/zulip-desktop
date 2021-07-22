@@ -379,7 +379,7 @@ webview.focus {
 .server-tooltip {
   font-family: "arial", sans-serif;
   background: rgba(34, 44, 49, 1);
-  left: 56px;
+  left: 60px;
   padding: 10px 20px;
   position: fixed;
   margin-top: 11px;
