@@ -223,6 +223,14 @@ function getViewSubmenu(): Electron.MenuItemConstructorOptions[] {
       },
     },
     {
+      label: t.__("Toggle Organization Shortcuts"),
+      click(_item, focusedWindow) {
+        if (focusedWindow) {
+          focusedWindow.webContents.send("toggleOrgShortcuts");
+        }
+      },
+    },
+    {
       label: t.__("Toggle Sidebar"),
       accelerator: "CommandOrControl+Shift+S",
       click(_item, focusedWindow) {

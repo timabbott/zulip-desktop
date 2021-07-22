@@ -30,7 +30,7 @@ export default class ServerTab extends Tab {
         <div class="server-tab">
           <img class="server-icons" src="${this.props.icon}" />
         </div>
-        <div class="server-tab-shortcut">${this.generateShortcutText()}</div>
+        <div class="server-tab-shortcut style="display:none"">${this.generateShortcutText()}</div>
       </div>
     `;
   }
